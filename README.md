@@ -9,7 +9,7 @@ stock2.use(async (ctx, next) => {
 })
 
 stock1.use((ctx, next) => {
-  ctx = {
+  ctx.state = {
     mode: 'middleware'
   }
 
@@ -34,7 +34,7 @@ stock1.run()
 
 ```txt
 // console:
-{}
+{ state: { mode: 'middleware' } }
 stock2 fired
 41
 ```
